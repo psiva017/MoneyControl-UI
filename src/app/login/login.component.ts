@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+userName : String;
+password : String;
+
 
   ngOnInit() {
+    this.password = "Pass123$ ";
+    this.userName = "siva@yopmail.com";
   }
-
+ doLogin(){
+console.log(this.password, this.userName);
+this.router.navigate(['/dashboard']);
+}
 }
